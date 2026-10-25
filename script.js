@@ -57,8 +57,13 @@ class LinkedList {
       return currentNode;
     }
 
-    for (let i = 1; i === index; i++) {
+    let counter = 0;
+    while (counter !== index) {
       currentNode = currentNode.nextNode;
+      counter += 1;
+      if (currentNode === null) {
+        return undefined;
+      }
     }
     return currentNode;
   }
@@ -79,5 +84,5 @@ list.prepend("horse");
 // console.log(list.firstNode());
 // console.log(list.size());
 // console.log(list.tail());
-console.log(list.at(0));
+console.log(list.at(2));
 // console.dir(list, { depth: null });
