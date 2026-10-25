@@ -35,7 +35,7 @@ class LinkedList {
     if (this.head === null) {
       return undefined;
     }
-    return this.head.nextNode;
+    return this.head.value;
   }
   tail() {
     if (this.head === null) {
@@ -45,7 +45,7 @@ class LinkedList {
     while (currentNode.nextNode !== null) {
       currentNode = currentNode.nextNode;
     }
-    return currentNode;
+    return currentNode.value;
   }
   at(index) {
     if (this.head === null) {
@@ -54,7 +54,7 @@ class LinkedList {
 
     let currentNode = this.head;
     if (index === 0) {
-      return currentNode;
+      return currentNode.value;
     }
 
     let counter = 0;
@@ -65,7 +65,7 @@ class LinkedList {
         return undefined;
       }
     }
-    return currentNode;
+    return currentNode.value;
   }
   pop() {
     if (this.head === null) {
@@ -73,18 +73,15 @@ class LinkedList {
     }
     const first = this.head;
     this.head = this.head.nextNode;
-    return first;
+    return first.value;
   }
   contains(value) {
     let currentNode = this.head;
-    if (currentNode.value === value) {
-      return true;
-    }
-    while (currentNode.nextNode !== null) {
-      currentNode = currentNode.nextNode;
+    while (currentNode !== null) {
       if (currentNode.value === value) {
         return true;
       }
+      currentNode = currentNode.nextNode;
     }
     return false;
   }
@@ -108,7 +105,6 @@ class LinkedList {
     if (this.head === null) {
       return string;
     }
-    string = `( ${currentNode.value} ) -> `;
     while (currentNode !== null) {
       string += `( ${currentNode.value} ) -> `;
       currentNode = currentNode.nextNode;
