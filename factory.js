@@ -113,7 +113,7 @@ class LinkedList {
       string += `( ${currentNode.value} ) -> `;
       currentNode = currentNode.nextNode;
     }
-    return string += "null";
+    return (string += "null");
   }
 }
 
@@ -124,17 +124,4 @@ class Node {
   }
 }
 
-const list = new LinkedList();
-list.append("dog");
-list.append("cat");
-list.append("bird");
-list.prepend("horse");
-// console.log(list.firstNode());
-// console.log(list.size());
-// console.log(list.tail());
-// console.log(list.at(2));
-// console.log(list.pop());
-// console.log(list.contains("bird"));
-// console.log(list.findIndex("horse"));
-console.log(list.toString());
-// console.dir(list, { depth: null });
+export { LinkedList };
