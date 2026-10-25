@@ -32,10 +32,20 @@ class LinkedList {
     return counter;
   }
   firstNode() {
-    if(this.head === null) {
+    if (this.head === null) {
       return undefined;
     }
-    else return this.head.nextNode;
+    return this.head.nextNode;
+  }
+  tail() {
+    if (this.head === null) {
+      return undefined;
+    }
+    let currentNode = this.head;
+    while (currentNode.nextNode !== null) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
   }
 }
 
@@ -52,6 +62,7 @@ list.append("cat");
 list.append("bird");
 list.prepend("horse");
 list.prepend("mouse");
-console.log(list.firstNode());
+// console.log(list.firstNode());
 // console.log(list.size());
+console.log(list.tail());
 // console.dir(list, { depth: null });
