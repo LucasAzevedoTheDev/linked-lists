@@ -68,12 +68,25 @@ class LinkedList {
     return currentNode;
   }
   pop() {
-    if(this.head === null) {
+    if (this.head === null) {
       return undefined;
     }
     const first = this.head;
     this.head = this.head.nextNode;
     return first;
+  }
+  contains(value) {
+    let currentNode = this.head;
+    if (currentNode.value === value) {
+      return true;
+    }
+    while (currentNode.nextNode !== null) {
+      currentNode = currentNode.nextNode;
+      if (currentNode.value === value) {
+        return true;
+      }
+    }
+    return false;
   }
 }
 
@@ -93,5 +106,6 @@ list.prepend("horse");
 // console.log(list.size());
 // console.log(list.tail());
 // console.log(list.at(2));
-console.log(list.pop());
-console.dir(list, { depth: null });
+// console.log(list.pop());
+console.log(list.contains("bird"));
+// console.dir(list, { depth: null });
