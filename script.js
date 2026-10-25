@@ -14,6 +14,10 @@ class LinkedList {
       currentNode.nextNode = newNode;
     }
   }
+  prepend(value) {
+    const newNode = new Node(value, this.head);
+    this.head = newNode;
+  }
 }
 
 class Node {
@@ -27,4 +31,6 @@ const list = new LinkedList();
 list.append("dog");
 list.append("cat");
 list.append("bird");
+list.prepend("horse");
+list.prepend("mouse");
 console.dir(list, { depth: null });
