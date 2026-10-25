@@ -67,6 +67,14 @@ class LinkedList {
     }
     return currentNode;
   }
+  pop() {
+    if(this.head === null) {
+      return undefined;
+    }
+    const first = this.head;
+    this.head = this.head.nextNode;
+    return first;
+  }
 }
 
 class Node {
@@ -84,5 +92,6 @@ list.prepend("horse");
 // console.log(list.firstNode());
 // console.log(list.size());
 // console.log(list.tail());
-console.log(list.at(2));
-// console.dir(list, { depth: null });
+// console.log(list.at(2));
+console.log(list.pop());
+console.dir(list, { depth: null });
