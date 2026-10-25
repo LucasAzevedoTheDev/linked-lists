@@ -91,7 +91,7 @@ class LinkedList {
   findIndex(value) {
     let index = 0;
     let currentNode = this.head;
-    
+
     while (currentNode !== null) {
       if (currentNode.value === value) {
         return index;
@@ -100,6 +100,20 @@ class LinkedList {
       index += 1;
     }
     return -1;
+  }
+  toString() {
+    let string = "";
+    let currentNode = this.head;
+
+    if (this.head === null) {
+      return string;
+    }
+    string = `( ${currentNode.value} ) -> `;
+    while (currentNode !== null) {
+      string += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.nextNode;
+    }
+    return string += "null";
   }
 }
 
@@ -121,5 +135,6 @@ list.prepend("horse");
 // console.log(list.at(2));
 // console.log(list.pop());
 // console.log(list.contains("bird"));
-console.log(list.findIndex("horse"));
+// console.log(list.findIndex("horse"));
+console.log(list.toString());
 // console.dir(list, { depth: null });
