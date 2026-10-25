@@ -18,6 +18,19 @@ class LinkedList {
     const newNode = new Node(value, this.head);
     this.head = newNode;
   }
+  size() {
+    let counter = 0;
+    if (this.head === null) {
+      return counter;
+    }
+    let currentNode = this.head;
+    counter = 1;
+    while (currentNode.nextNode !== null) {
+      currentNode = currentNode.nextNode;
+      counter += 1;
+    }
+    return counter;
+  }
 }
 
 class Node {
@@ -33,4 +46,5 @@ list.append("cat");
 list.append("bird");
 list.prepend("horse");
 list.prepend("mouse");
+console.log(list.size());
 console.dir(list, { depth: null });
