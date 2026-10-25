@@ -47,6 +47,21 @@ class LinkedList {
     }
     return currentNode;
   }
+  at(index) {
+    if (this.head === null) {
+      return undefined;
+    }
+
+    let currentNode = this.head;
+    if (index === 0) {
+      return currentNode;
+    }
+
+    for (let i = 1; i === index; i++) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
 
 class Node {
@@ -61,8 +76,8 @@ list.append("dog");
 list.append("cat");
 list.append("bird");
 list.prepend("horse");
-list.prepend("mouse");
 // console.log(list.firstNode());
 // console.log(list.size());
-console.log(list.tail());
+// console.log(list.tail());
+console.log(list.at(0));
 // console.dir(list, { depth: null });
