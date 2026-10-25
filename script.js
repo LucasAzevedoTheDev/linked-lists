@@ -31,6 +31,12 @@ class LinkedList {
     }
     return counter;
   }
+  firstNode() {
+    if(this.head === null) {
+      return undefined;
+    }
+    else return this.head.nextNode;
+  }
 }
 
 class Node {
@@ -46,5 +52,6 @@ list.append("cat");
 list.append("bird");
 list.prepend("horse");
 list.prepend("mouse");
-console.log(list.size());
-console.dir(list, { depth: null });
+console.log(list.firstNode());
+// console.log(list.size());
+// console.dir(list, { depth: null });
